@@ -1,10 +1,10 @@
 """
     Created by mbenlioglu on 10/18/2017
 """
-from _util import gcd
+from util import gcd
 
 
-def factorization_from_known_roots(number, known_roots):
+def get_factorization_from_known_roots(number, known_roots):
     """
     Factorizes number to (p x q), where p and q are primes by using known_roots.
     :param number: Number to be factorized
@@ -22,6 +22,7 @@ def factorization_from_known_roots(number, known_roots):
         if root1 + i != number:
             root2 = i
             break
+
     if root2 is None:
         raise ValueError('Root values are wrong!')
 
