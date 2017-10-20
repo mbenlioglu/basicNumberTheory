@@ -78,7 +78,28 @@ To see the output of these example runs type the following command in the projec
 
 **Exponentiation using Chinese Remainder Theorem or directly:**
 
+    usage: basicNumberTheory.py exponential [-h] [--params p q m e]
+                                            [--method {direct,crt}]
+                                            [--get-all-intermediate] [--perf]
     
+    optional arguments:
+      -h, --help            show this help message and exit
+      --params p q m e      p, q, m, e that are used to calculate c^d mod n where
+                            n = p*q, c = m^e mod n & d = e^-1 mod n
+      --method {direct,crt}
+                            Either direct or crt. Direct, directly takes power and
+                            reduces to mod n, CRT uses chineseremainder theorem to
+                            reduce the calculation
+      --get-all-intermediate
+                            Print all intermediate values during crt method
+                            (ignored in direct)
+      --perf                Does not produce output, just compares the elapsed
+                            time between direct and crt
 
 **Linear equation solving under given modulus:**
 
+    usage: basicNumberTheory.py lineq [-h] [--params a b mod]
+    
+    optional arguments:
+      -h, --help        show this help message and exit
+      --params a b mod  a, b and n in the equation a*x = b mod n. In that order

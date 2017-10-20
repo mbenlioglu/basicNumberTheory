@@ -208,7 +208,7 @@ if __name__ == '__main__':
 
     # parser for "exponential"
     parser_exp = subparsers.add_parser('exponential', help=descriptions.help_exponential)
-    parser_exp.add_argument('params', type=long, nargs=4, metavar=('p', 'q', 'm', 'e'),
+    parser_exp.add_argument('--params', type=long, nargs=4, metavar=('p', 'q', 'm', 'e'),
                             help=descriptions.help_exponential_nums)
     parser_exp.add_argument('--method', choices=['direct', 'crt'], default='crt',
                             help=descriptions.help_exponential_method)
@@ -218,7 +218,7 @@ if __name__ == '__main__':
 
     # parser for "lineq"
     parser_lineq = subparsers.add_parser('lineq', help=descriptions.help_lineq)
-    parser_lineq.add_argument('params', type=long, nargs=3, metavar=('a', 'b', 'mod'),
+    parser_lineq.add_argument('--params', type=long, nargs=3, metavar=('a', 'b', 'mod'),
                               help=descriptions.help_lineq_nums)
     parser_lineq.set_defaults(func=linear_eq)
 
