@@ -4,6 +4,16 @@
 from util import gcd
 
 
+def get_coprimes(num):
+    """
+    Returns a list of integers which are between (0-num) and co-prime with num
+    :param num: limit
+    :type num: int
+    :return: list[int]
+    """
+    return [x for x in range(num) if x != 0 and gcd(x, num) == 1]
+
+
 def get_quadratic_residues(num):
     """
     Returns a list of integers which have square roots in modulo num

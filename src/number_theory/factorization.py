@@ -19,13 +19,13 @@ def get_factorization_from_known_roots(number, known_roots):
     root1 = known_roots[0]
     root2 = None
     for i in known_roots:
-        if root1 + i != number:
+        if i != root1 and root1 + i != number:
             root2 = i
             break
 
     if root2 is None:
         raise ValueError('Root values are wrong!')
 
-    p = gcd(root1 - root2, number)
+    p = gcd(abs(root1 - root2), number)
     q = number / p
     return p, q

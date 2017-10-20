@@ -95,12 +95,14 @@ def get_generators(group, modulo):
     for i in group:
         mult = i
         generated_dict = {x: False for x in group}
-        while mult != 1 or mult != 0:
+        while True:
             if mult in generated_dict:
                 generated_dict[mult] = True
             else:
                 raise ValueError('Supplied group is not a group')
-            mult = (mult * mult) % modulo
+            if mult == 1 or mult == 0:
+                break
+            mult = (i * mult) % modulo
         is_generator[i] = all(x is True for x in generated_dict.values())
 
-    return [is_generator[key] for key in is_generator if is_generator[key]]
+    return sorted([key for key in is_generator if is_generator[key]])
